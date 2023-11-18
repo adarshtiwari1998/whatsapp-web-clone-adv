@@ -98,7 +98,7 @@ export function generateToken04(
   var encryptBuf = aesEncrypt(plaintText, secret, iv); // Encrypt JSON string using AES encryption function
   var _a = [new Uint8Array(8), new Uint8Array(2), new Uint8Array(2)],
     b1 = _a[0],
-    b2 = _a[1],
+    b2 = _a[1],                             
     b3 = _a[2];
   new DataView(b1.buffer).setBigInt64(0, BigInt(tokenInfo.expire), false); // Set expire time in binary format
   new DataView(b2.buffer).setUint16(0, iv.length, false); // Set length of iv in binary format
